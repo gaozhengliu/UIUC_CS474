@@ -14,7 +14,7 @@
 (check-sat)
 (echo "check sai and phi are eq-sat")
 (define-fun sai () Bool 
-    (or (not p) q)
+    (or (not r) r)
 )
 (assert sai)
 (check-sat)
