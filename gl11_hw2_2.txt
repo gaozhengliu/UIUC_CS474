@@ -1,7 +1,8 @@
+(echo "check sat of phi")
 (declare-const p Bool)
 (declare-const q Bool)
 (declare-const r Bool)
-(define-fun problem2 () Bool
+(define-fun phi () Bool
     (and (or q (not r)) 
         (or (not p) r) 
         (or (not q) r p) 
@@ -9,5 +10,12 @@
         (or (not r) q)
     )
 )
-(assert problem2)
+(assert phi)
 (check-sat)
+(echo "check sai and phi are eq-sat")
+(define-fun sai () Bool 
+    (or (not p) q)
+)
+(assert sai)
+(check-sat)
+
