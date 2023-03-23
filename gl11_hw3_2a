@@ -1,0 +1,14 @@
+(declare-const l1 Real)
+(declare-const l2 Real)
+(declare-const u1 Real)
+(declare-const u2 Real)
+(declare-const w Real)
+(assert (forall ((z Real))
+            (=> (and (< l1 z) (< z u1) (< l2 z) (< z u2)) 
+                 (
+                    and (< l1 w) (< 2 u1) (< l2 w) (< w u2) (< w z) (> w z))
+
+            )
+        )
+)
+(apply qe) 
